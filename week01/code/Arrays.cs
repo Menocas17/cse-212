@@ -26,7 +26,7 @@ public static class Arrays
         };
 
 
-        return multiples; // replace this return statement with your own
+        return multiples; // return the multiples array containing the correct data
     }
 
     /// <summary>
@@ -43,10 +43,10 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        // new list to temporaly storage the reordered list
+        // new list to temporary storage the reordered list
         List <int> rotatedList = new List<int> (new int[data.Count]);
 
-        //loop to get the new index of the elements of the list based in the amount paramenter 
+        //loop to get the new index of the elements of the list based in the amount paramenter, I used the % operator to calculate the new index and then added to the temporary list
         for (var i = 0; i < data.Count; i++) {
             var newIndex = (i + amount) % data.Count;
             rotatedList [newIndex] = data[i];
