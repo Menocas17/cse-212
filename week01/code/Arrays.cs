@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+
 public static class Arrays
 {
     /// <summary>
@@ -13,7 +15,18 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+
+        // creating an empty array of doubles to store the muiltiples
+        double[] multiples = new double[length];
+
+
+        //a for loop that will iterate the number of times provided by the 'length', the same index will be used to do the operations necessary to calculate and add the multiples
+        for (var i = 0; i < length; i++) {
+            multiples[i] = number * (i + 1);
+        };
+
+
+        return multiples; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +42,19 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // new list to temporaly storage the reordered list
+        List <int> rotatedList = new List<int> (new int[data.Count]);
+
+        //loop to get the new index of the elements of the list based in the amount paramenter 
+        for (var i = 0; i < data.Count; i++) {
+            var newIndex = (i + amount) % data.Count;
+            rotatedList [newIndex] = data[i];
+        };
+
+        // loop to modify the original list with the reordered data
+        for (var i = 0; i < data.Count; i++) {
+            data[i] = rotatedList [i];
+        }
     }
 }
