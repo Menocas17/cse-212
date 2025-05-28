@@ -37,9 +37,12 @@ public class PriorityQueueTests
 
         var expectedResult = "value3";
 
+        var quequeAfterRemoving = "[value1 (Pri:30), value2 (Pri:50)]";
+
         var result = priorityQueue.Dequeue();
 
         Assert.AreEqual(result, expectedResult);
+        Assert.AreEqual(priorityQueue.ToString(), quequeAfterRemoving);
     }
 
     [TestMethod]
