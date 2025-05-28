@@ -24,15 +24,30 @@ public class Maze
     {
         _mazeMap = mazeMap;
     }
+    
+    public ValueTuple<int, int> CurrentPosition => (_currX, _currY);
 
     // TODO Problem 4 - ADD YOUR CODE HERE
     /// <summary>
     /// Check to see if you can move left.  If you can, then move.  If you
     /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
     /// </summary>
+
+
+
     public void MoveLeft()
     {
-        // FILL IN CODE
+        Boolean isPossible = _mazeMap[CurrentPosition][0];
+
+        if (isPossible)
+        {
+            _currX--;
+        }
+
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
     }
 
     /// <summary>
@@ -41,7 +56,17 @@ public class Maze
     /// </summary>
     public void MoveRight()
     {
-        // FILL IN CODE
+        Boolean isPossible = _mazeMap[CurrentPosition][1];
+
+        if (isPossible)
+        {
+            _currX++;
+        }
+
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
     }
 
     /// <summary>
@@ -50,7 +75,17 @@ public class Maze
     /// </summary>
     public void MoveUp()
     {
-        // FILL IN CODE
+                Boolean isPossible = _mazeMap[CurrentPosition][2];
+
+        if (isPossible)
+        {
+            _currY--;
+        }
+
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
     }
 
     /// <summary>
@@ -59,7 +94,17 @@ public class Maze
     /// </summary>
     public void MoveDown()
     {
-        // FILL IN CODE
+        Boolean isPossible = _mazeMap[CurrentPosition][3];
+
+        if (isPossible)
+        {
+            _currY++;
+        }
+
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
     }
 
     public string GetStatus()
